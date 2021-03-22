@@ -286,5 +286,24 @@ A function that takes an int and a pointer to an int and returns the larger of t
 
 ## [Exercise 6.22](https://github.com/QuJia-Jessica/cpp/edit/QuJia-Jessica-patch-1/Exe_6.22.cpp)
 
-## [Exercise 6.23]
+## [Exercise 6.23](https://github.com/QuJia-Jessica/cpp/edit/QuJia-Jessica-patch-1/Exe_6.23.cpp)
 Write own version of each print function in this section.
+
+## Exercise 6.24
+Explain the behavior of the following function. Fix the problems if they exist.
+```cpp
+void print(const int ia[10]) // This code wants to print the array of ten ints.
+{
+      for (size_t i = 0; i != 10; ++i)
+            cout << ia[i] << endl;
+}
+```
+
+Arrays have two special properties that affect how we define and use functions that operate on arrays: We cannot copy an array, and when we use an array it is (usually) converted to a pointer.
+
+So we cannot pass an array by value, and when we pass an array to a function, we are actually passing a pointer to the array's first element.
+Here const int ia[10] basicly pass the value as int* where the size of the array does not matter.
+So if we want to pass an array of ten ints, we should modify the declaration part like this:
+```cpp
+void print10(const int (&ia)[10]) { /*...*/ }
+```
