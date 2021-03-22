@@ -285,3 +285,6 @@ print(k); // ok: argument is an array of ten ints
 A function that takes an int and a pointer to an int and returns the larger of the int value or the value to which the pointer points. 
 
 ## [Exercise 6.22](https://github.com/QuJia-Jessica/cpp/edit/QuJia-Jessica-patch-1/Exe_6.22.cpp)
+
+## [Exercise 6.23]
+Write own version of each print function in this section.
