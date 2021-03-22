@@ -5,15 +5,16 @@ Parameters: Local variable declared inside the function parameter list. they are
 Arguments: Values supplied in a function call that are used to initialize the function's parameters.
 
 # Exercise 6.2
-
+```ruby
 a) int f() {
       string s;
       // ...
       return s;
 } // Error: return type must be the same as the function declaration type, as in int.
 
-b) f2(int i) { /* ... */ }  // ok
+b) f2(int i) { /* ... */ }  // okay
 
-c) int calc(int v1, int v1) /* ... */ } // Error: firstly, the v1 has been seclared so cannot be declared again. Secondly, this function missed a { at the beginning.
+c) int calc(int v1, int v1) { /* ... */ } // Error: the v1 has been seclared so cannot be declared again.
 
 d) double squre(double x) return x * x; // okay.
+```
