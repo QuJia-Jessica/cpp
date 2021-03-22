@@ -18,3 +18,15 @@ c) int calc(int v1, int v1) { /* ... */ } // Error: the v1 has been seclared so 
 
 d) double squre(double x) return x * x; // okay.
 ```
+
+# Exercise 6.3
+Write and test my version of fact
+```cpp
+int fact(int val){
+      int ret = 1;
+      while (val > 1)
+            ret *= val--;
+      return ret;
+
+}
+```
