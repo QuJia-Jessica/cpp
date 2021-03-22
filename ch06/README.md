@@ -130,7 +130,7 @@ size_t generate()
 Wrtie fact.cc & factMain.cc file together with the use of Chapter6.h;
 Still need to work on this task.
 
-## [Exercise 6.10](https://github.com/QuJia-Jessica/cpp/edit/QuJia-Jessica-patch-1/Exe_6.10)
+## [Exercise 6.10](https://github.com/QuJia-Jessica/cpp/edit/QuJia-Jessica-patch-1/Exe_6.10.cpp)
 Swap the values of two ints using pointers.
 
 ## Exercuse 6.11
@@ -148,4 +148,4 @@ int main()
     return 0;
 }
 ```
-
+## [Exercise 6.12](https://github.com/QuJia-Jessica/cpp/edit/QuJia-Jessica-patch-1/Exe_6.12.cpp)
