@@ -97,4 +97,30 @@ int main(){
 }
 ```
 
+## Exercise 6.6
+A local variable: Variables defined inside a block; when we need the refreshed value everytime the function is been called.
+Parameter: Local variables declared inside the function parameter list
+A local static variable: Is initialized before the first time execution passes through the object's definition. when we need the value for the variable to be carried on until the program terminates.
 
+## Exercise 6.7
+```cpp
+#include<iostream>
+
+size_t count_calls(){
+    static size_t ctr = 0; // value will persist across calls
+    return ++ctr;
+}
+
+int main(){
+    for (size_t i = 0; i != 10; ++i)
+        std::cout << count_calls() << std::endl;
+    return 0;
+}```
+// What's the difference between ++ctr and ctr++ in this program??
+```cpp
+size_t generate()
+{
+    static size_t ctr = 0;
+    return ctr++;
+}
+```
