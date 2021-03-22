@@ -205,3 +205,26 @@ Because c may be a temp varable, such as find_char(s, 'a', occurs)
 ```What would happen if we made s a plain reference? What if we made occurs a reference to const?```
 
 s could be changed in the function, and occurs would not be changed. so occurs = 0; is an error.
+
+```cpp
+int i = 0;
+const int ci = i;
+string::size_type ctr = 0;
+reset(&i); // calls the version of reset that has an int* parameter
+reset(&ci); // error: can't initialize an int* from a pointer to a const int object
+reset(i); // calls the version of reset that has an int& parameter
+reset(ci); // error: can't bind a plain reference to the const object ci
+reset(42); // error: can't bind a plain reference to a literal
+reset(ctr); // error: types don't match; ctr has an unsigned type
+// ok: find_char's first parameter is a reference to const
+find_char("Hello World!", 'o', ctr);
+```
+## Exercise 6.16
+original function:
+```cpp
+bool is_empty(string& s){ return s.empty(); }
+```
+modified function:
+```cpp
+bool is_empty(const string& s){ return s.empty(); } //Since this function doesn't change the argument, "const" shoud be added before string&s, otherwise this function is misleading and can't be used with const string or in a const function.
+```
