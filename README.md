@@ -126,4 +126,10 @@ size_t generate()
 ```
 ## [Exercise 6.8](https://github.com/QuJia-Jessica/cpp/edit/QuJia-Jessica-patch-1/Exe_6.8_Chapter6.h)
 
+## Exercise 6.9 
+Wrtie fact.cc & factMain.cc file together with the use of Chapter6.h;
+Still need to work on this task.
+
+## [Exercise 6.10](https://github.com/QuJia-Jessica/cpp/edit/QuJia-Jessica-patch-1/Exe_6.10)
+
 
