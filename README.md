@@ -124,3 +124,6 @@ size_t generate()
     return ctr++;
 }
 ```
+## [Exercise 6.8](https://github.com/QuJia-Jessica/cpp/edit/QuJia-Jessica-patch-1/Exe_6.8_Chapter6.h)
+
+
