@@ -149,3 +149,48 @@ int main()
 }
 ```
 ## [Exercise 6.12](https://github.com/QuJia-Jessica/cpp/edit/QuJia-Jessica-patch-1/Exe_6.12.cpp)
+
+## Exercise 6.13
+Difference between function using void f(T) and void f(T&): where T is a name of a type
+void f(T) pass the argument by value. nothing the function does to the parameter can affect the argument. 
+void f(T&) pass a reference, will be bound to whatever T object we pass.
+
+## Exercise 6.14
+a parameter should be a reference type:
+```cpp
+void reset(int &i)
+{
+        i = 0;
+}
+```
+
+a parameter should not be a reference:
+```cpp
+void print(std::vector<int>::iterator begin, std::vector<int>::iterator end)
+{
+        for (std::vector<int>::iterator iter = begin; iter != end; ++iter)
+                std::cout << *iter << std::endl;
+}
+```
+
+## Exercise 6.15
+ Explain the rationale for the type of each of find_char’s
+parameters In particular, why is s a reference to const but occurs is a
+plain reference? Why are these parameters references, but the char
+parameter c is not? What would happen if we made s a plain reference?
+What if we made occurs a reference to const?
+```cpp
+string::size_type find_char(const string &s, char c, string::size_type &occurs)
+{
+      auto ret = s.size(); // position of the first occurrence, if any
+      occurs = 0; // set the occurrence count parameter
+      for (decltype(ret) i = 0; i != s.size(); ++i) {
+            if (s[i] == c) {
+                  if (ret == s.size())
+                        ret = i; // remember the first occurrence of c
+                  ++occurs; // increment the occurrence count
+            }
+      }
+      return ret; // count is returned implicitly in occurs
+}
+```
