@@ -228,3 +228,60 @@ modified function:
 ```cpp
 bool is_empty(const string& s){ return s.empty(); } //Since this function doesn't change the argument, "const" shoud be added before string&s, otherwise this function is misleading and can't be used with const string or in a const function.
 ```
+## [Exercise 6.17](https://github.com/QuJia-Jessica/cpp/edit/QuJia-Jessica-patch-1/Exe_6.17.cpp)
+The parameters used in the two functions are not the same type. First one is const string&, second one is string&. Since we wish to change the value of the element in the second function so we expect the & is enable to change the value. For the first one, we only need to track the string but no need to change the values of the elements. Hence a const string& is used.
+
+
+## Exercise 6.18
+a) 
+```cpp
+bool compare(const matrix& m1, const matrix& m2){/*...*/}  // no need const here?
+```
+b)
+```cpp
+vector<int>::iterator change_val(int, vector<int>::iterator){/*...*/}
+```
+
+## Exercise 6.19
+```cpp
+double calc(double);
+int count(const string &, char);
+int sum(vector<int>::iterator, vector<int>::iterator, int);
+vector<int> vec(10);
+```
+(a) calc(23.4, 55.1); // illegal, take in too much parameters.
+(b) count("abcda", 'a'); //legal
+(c) calc(66); // legal, but the 66 will be converted to double type 66.0.
+(d) sum(vec.begin(), vec.end(), 3.8); //legal, but the value 3.8 will be converted to int 3.
+
+## Exercise 6.20
+When should reference parameters be references to const? What happens if we make a parameter a plain reference when it could be a reference to const?
+When the value of the reference parameters should not be changed, we set the reference to const. If we make a parameter a plain reference when it could be a reference to const, the value of the reference maybe changed which we don't want to.
+
+## Array Parameters
+These declarations are equivalent: Each declares a function with a single parameter of type const int*.
+```cpp
+void print(const int*);
+void print(const int[]); // shows the intent that the function takes an array
+void print(const int[10]); // dimension for doumentation purposes(at best)
+```
+If we pass an array to print, that argument is automatically converted to a pointer to the first element in the array; the size of the array is irrelevant.
+```cpp
+int i = 0, j[2] = {0, 1};
+pring(&i); //ok: &i is int*
+print(j); // ok: j in converted to an int* that points to j[0]
+```
+### Array Reference Parameters
+```cpp
+void print(int (&arr)[10]){ // () here shows that arr is a reference to an array of ten ints
+for (auto elem : arr) cout << elem << endl;
+
+int i = 0, j[2] = {0, 1};
+print(&i); print(j); // error: both arguments are not arrays of ten ints
+int k[10] = {0,1,2,3,4,5,6,7,8,9}; 
+print(k); // ok: argument is an array of ten ints
+```
+## [Exercise 6.21](https://github.com/QuJia-Jessica/cpp/edit/QuJia-Jessica-patch-1/Exe_6.21.cpp)
+A function that takes an int and a pointer to an int and returns the larger of the int value or the value to which the pointer points. 
+
+## [Exercise 6.22](https://github.com/QuJia-Jessica/cpp/edit/QuJia-Jessica-patch-1/Exe_6.22.cpp)
