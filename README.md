@@ -23,10 +23,32 @@ d) double squre(double x) return x * x; // okay.
 Write and test my version of fact
 ```cpp
 int fact(int val){
-      int ret = 1;
-      while (val > 1)
-            ret *= val--;
-      return ret;
+    int ret = 1;
+    while (val > 1)
+        ret *= val--;
+    return ret;
+}
+int main(){
+    std::cout << (120 == fact(5)) << std::endl;
+    return 0;
+}
+```
 
+## Exercise 6.4
+A user interative function ask for a number and generate the factorial of that number.
+```cpp
+int fact(int val){
+    int ret = 1;
+    while (val > 1)
+        ret *= val--;
+    return ret;
+}
+int main(){
+    int val;
+    std::cout << "PLease enter a number: " << std::endl;
+    while (std::cin >> val)
+        std::cout << "The factorial of that number is: " << fact(val) << std::endl;
+    
+    return 0;
 }
 ```
