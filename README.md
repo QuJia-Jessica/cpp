@@ -1,10 +1,10 @@
-# Excercise 6.1
+## Excercise 6.1
 
 Parameters: Local variable declared inside the function parameter list. they are initialized by the arguments provided in the each function call.
 
 Arguments: Values supplied in a function call that are used to initialize the function's parameters.
 
-# Exercise 6.2
+## Exercise 6.2
 ```cpp
 a) int f() {
       string s;
@@ -19,7 +19,7 @@ c) int calc(int v1, int v1) { /* ... */ } // Error: the v1 has been seclared so 
 d) double squre(double x) return x * x; // okay.
 ```
 
-# Exercise 6.3
+## Exercise 6.3
 Write and test my version of fact
 ```cpp
 int fact(int val){
