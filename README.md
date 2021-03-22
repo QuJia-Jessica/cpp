@@ -5,7 +5,7 @@ Parameters: Local variable declared inside the function parameter list. they are
 Arguments: Values supplied in a function call that are used to initialize the function's parameters.
 
 # Exercise 6.2
-```ruby
+```cpp
 a) int f() {
       string s;
       // ...
