@@ -83,3 +83,18 @@ int main()
     return 0;
 }
 ```
+
+## Exercise 6.5
+Write a function to return the absolute value of its argument.
+```cpp
+#include<iostream>
+
+int ab_val(int val){ return abs(val);} // or we can expand the default abs function as: return i > 0 ? i : -i;
+
+int main(){
+    std::cout << ab_val(-5) << std::endl;
+    return 0;
+}
+```
+
+
