@@ -131,5 +131,21 @@ Wrtie fact.cc & factMain.cc file together with the use of Chapter6.h;
 Still need to work on this task.
 
 ## [Exercise 6.10](https://github.com/QuJia-Jessica/cpp/edit/QuJia-Jessica-patch-1/Exe_6.10)
+Swap the values of two ints using pointers.
 
+## Exercuse 6.11
+```cpp
+void reset(int &i)
+{
+    i = 0;
+}
+
+int main()
+{
+    int i = 42;
+    reset(i);
+    std::cout << i  << std::endl;
+    return 0;
+}
+```
 
