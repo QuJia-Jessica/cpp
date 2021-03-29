@@ -378,3 +378,38 @@ decltype(arrStr)& arrPtr(int i)
 
 ## [Exercise 6.42](https://github.com/QuJia-Jessica/cpp/edit/QuJia-Jessica-patch-1/Exe_6.42.cpp)
 
+## Exercise 6.43
+Both two should put in a header. (a) is an inline function. (b) is the declaration of useful function. we always put them in the header.
+
+## Exercise 6.44
+```cpp
+#include <iostream>
+#include <string>
+using std::string; using std::cout; using std::endl;
+
+inline bool is_shorter(const string &lft, const string &rht) // defining in the header is better.
+{
+    return lft.size() < rht.size();
+}
+
+int main()
+{
+    cout << is_shorter("pezy", "mooophy") << endl;
+    return 0;
+}
+```
+
+## Exercise 6.45
+For example, the function arrPtr in [Exercise 6.38](# Exercise-638) and make_plural in [Exercise 6.42](# Exercise-642) should be defined as inline. But the function func in [Exercise 6.4](# Exercise-64) shouldn't. It is not that small and it's only being called once. Hence, it will probably not expand as inline.
+
+## Exercise 6.46
+
+Would it be possible to define isShorter as a constexpr? If so, do so. If not, explain why not.
+
+No.
+
+Because std::string::size() is not a constexpr function and s1.size() == s2.size() is not a constant expression.
+
+For a non-template, non-defaulted constexpr function or a non-template, non-defaulted, non-inheriting constexpr constructor, if no argument values exist such that an invocation of the function or constructor could be an evaluated subexpression of a core constant expression (5.19), the program is ill-formed; no diagnostic required. (N3690 §7.1.5 [dcl.constexpr]/5)
+
+## [Exercise 6.47](https://github.com/QuJia-Jessica/cpp/edit/QuJia-Jessica-patch-1/Exe_6.47.cpp)
