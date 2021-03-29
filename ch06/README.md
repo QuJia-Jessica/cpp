@@ -430,3 +430,61 @@ viable function: Subset of the candidate functions that could match a given call
 (d) match void f(double, double = 3.14).
 
 ## [Exercise 6.51](https://github.com/QuJia-Jessica/cpp/edit/QuJia-Jessica-patch-1/Exe_6.51.cpp)
+
+## Exercise 6.52
+```cpp
+void manip(int, int);
+double dobj;
+```
+a) manip('a','z');  Match through a promotion
+b) manip(55.4, dobj); Arithmetic type conversion
+
+## Exercise 6.53
+a)
+```cpp
+int calc(int&, int&); // calls lookup(int&)
+int calc(const int&, const int&); // calls lookup(const int&)
+```
+b)
+```cpp
+int calc(char*, char*); // calls lookup(char*)
+int calc(const char*, const char*); // calls lookup(const char *)
+```
+c)
+illegal. both calls lookup(char*)
+
+## Exercise 6.54
+```cpp
+int func(int a, int b);
+
+using pFunc1 = decltype(func) *;
+typedef decltype(func) *pFunc2;
+using pFunc3 = int (*)(int a, int b);
+using pFunc4 = int(int a, int b);
+typedef int(*pFunc5)(int a, int b);
+using pFunc6 = decltype(func);
+
+std::vector<pFunc1> vec1;
+std::vector<pFunc2> vec2;
+std::vector<pFunc3> vec3;
+std::vector<pFunc4*> vec4;
+std::vector<pFunc5> vec5;
+std::vector<pFunc6*> vec6;
+```
+
+## Exercise 6.55
+```cpp
+int add(int a, int b) { return a + b; }
+int subtract(int a, int b) { return a - b; }
+int multiply(int a, int b) { return a * b; }
+int divide(int a, int b) { return b != 0 ? a / b : 0; }
+```
+
+## Exercise 6.56
+```cpp
+std::vector<decltype(func) *> vec{ add, subtract, multiply, divide };
+for (auto f : vec)
+          std::cout << f(2, 2) << std::endl;
+```
+
+
