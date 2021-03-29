@@ -307,3 +307,25 @@ So if we want to pass an array of ten ints, we should modify the declaration par
 ```cpp
 void print10(const int (&ia)[10]) { /*...*/ }
 ```
+## [Exercise 6.27](https://github.com/QuJia-Jessica/cpp/edit/QuJia-Jessica-patch-1/Exe_6.27.cpp)
+
+## Exercise 6.28 
+for (const auto &elem : il)  //here the type of &elem is const std::string&
+
+## Exercise 6.29
+When you use an initializer_list in a range for would you ever use a reference as the loop control variable?
+Depends on the type of elements of initializer_list. When the type is PODType, reference is unnecessary. Because POD is cheap to copy(such as int). Otherwise, Using reference(const) is the better choice. ///Don't quite understand here.
+
+## Exercise 6.30
+Error (Clang):
+Non-void function 'str_subrange' should return a value. // error #1
+Control may reach end of non-void function. // error #2
+
+## Exercise 6.31
+when you can find the preexisting object that the reference refered.
+
+## Exercise 6.32
+legal, it gave the values (0 ~ 9) to array ia.
+
+## [Exercise 6.33](https://github.com/QuJia-Jessica/cpp/edit/QuJia-Jessica-patch-1/Exe_6.33.cpp)
+Write a recursive function, to print the contents of a vector.
