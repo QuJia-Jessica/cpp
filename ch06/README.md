@@ -413,3 +413,20 @@ Because std::string::size() is not a constexpr function and s1.size() == s2.size
 For a non-template, non-defaulted constexpr function or a non-template, non-defaulted, non-inheriting constexpr constructor, if no argument values exist such that an invocation of the function or constructor could be an evaluated subexpression of a core constant expression (5.19), the program is ill-formed; no diagnostic required. (N3690 §7.1.5 [dcl.constexpr]/5)
 
 ## [Exercise 6.47](https://github.com/QuJia-Jessica/cpp/edit/QuJia-Jessica-patch-1/Exe_6.47.cpp)
+
+## Exercise 6.48
+This loop let user input a word all the way until the word is sought.
+
+It isn't a good use of assert. because if user begin to input a word, the cin would be always have content. so the assert would be always true. It is meaningless. using assert(s == sought) is better.
+
+## Exercise 6.49
+candidate function: Set of functions that are considered when resolving a function call. (all the functions with the name used in the call for which a declaration is in scope at the time of the call.)
+viable function: Subset of the candidate functions that could match a given call. It have the same number of parameters as arguments to the call, and each argument type can be converted to the corresponding parameter type.
+
+## Exercise 6.50
+(a) illegal. 2.56 match the double, but 42 match the int.
+(b) match void f(int).
+(c) match void f(int, int).
+(d) match void f(double, double = 3.14).
+
+## [Exercise 6.51](https://github.com/QuJia-Jessica/cpp/edit/QuJia-Jessica-patch-1/Exe_6.51.cpp)
