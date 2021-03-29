@@ -334,3 +334,47 @@ Write a recursive function, to print the contents of a vector.
 What would happen if the stopping condition in factorial were "if (val != 0)"
 - case 1 : If the argument is positive, recursion stops at 0.(Note : There is one extra multiplication step though as the combined expression for factorial(5) reads 5 * 4 * 3 * 2 * 1 * 1. In terms of programming languages learning, such subtle difference probably looks quite trivial. In algorithms analysis and proof, however, this extra step may be super important.)
 - case 2 : if the argument is negative, recursion would never stop. As a result, a stack overflow would occur.
+
+## Exercise 6.35
+pass val - 1 instead of val --
+the recursive function will always use val as the parameter. a recursion loop would happen.
+
+## Exercise 6.36
+// Write the declaration for a function that returns a reference to an array of ten strings, without using either a trailing return, decltype, or a type alias.
+```cpp
+string (&func(string (&arrStr)[10]))[10]
+```
+## Exercise 6.37
+```cpp
+using ArrT = string[10];
+ArrT& func1(ArrT& arr);
+
+auto func2(ArrT& arr) -> string(&)[10];
+
+string arrS[10];
+decltype(arrS)& func3(ArrT& arr);
+```
+## Exercise 6.38
+```cpp
+decltype(arrStr)& arrPtr(int i)
+{
+          return (i % 2) ? odd : even;
+}
+```
+## Exercise 6.39
+(a) legal, repeated declarations(without definition) are legal in C++
+(b) illegal, only the return type is different
+(c) legal, the parameter type is different and return type is changed
+
+## Exercise 6.40
+(a) no error
+(b) Missing default argument on parameter 'wd', 'bckgrnd'.
+
+## Exercise 6.41
+(a) illegal. No matching function for call to 'init'.
+(b) legal, and match.
+(c) legal, but not match. wd whould be setting to '*'.
+
+
+## [Exercise 6.42](https://github.com/QuJia-Jessica/cpp/edit/QuJia-Jessica-patch-1/Exe_6.42.cpp)
+
